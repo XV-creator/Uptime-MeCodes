@@ -9,6 +9,6 @@ module.exports={
    if(!args[0])return message.channel.send(new Discord.MessageEmbed().setDescription("You must type tye project name").setColor('#00BFFF'));
     if(!db.get("uptime").includes(args[0]+" "+message.author.id))return message.channel.send(new Discord.MessageEmbed().setDescription("I Didnt Find This Project"))
     db.set("uptime",db.get("uptime").filter(a=>a!=args[0]+" "+message.author.id));
-    message.channel.send(new Discord.MessageEmbed("Your Project Has Been Deleted!"));
+    message.channel.send(new Discord.MessageEmbed().setDescription("Your Project Has Been Deleted!"));
    }
 };
