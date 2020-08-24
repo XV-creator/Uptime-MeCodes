@@ -8,9 +8,9 @@ client.on("ready",()=>{
   console.log("Started! "+client.user.tag);
   var uptime=a=>require("request").defaults({headers:{'User-Agent':require('random-useragent').getRandom()}}).get("https://"+a.split(" ")[0]+".glitch.me/");
   client.user.setPresence({status:"online",activity:{name:"!help"}})
-  const a=client.channels.cache.get("744652520416215100"); ///bildirim gidecek kanal
+  const a=client.channels.cache.get(""); ///bildirim gidecek kanal
   if(!a)return;
-  a.send("<a:white_check_mark:719863435470438422>  يتم تحديث جميع المشاريع!");
+  a.send("👍 يتم تحديث جميع المشاريع!");
   setInterval(()=>{try{db.fetch("uptime").forEach(uptime)}catch{};a.send("<a:white_check_mark:719863435470438422>  يتم تحديث جميع المشاريع!");},30000);
 });
 const cooldowns=new Discord.Collection();
@@ -30,10 +30,10 @@ client.on("message",message=>{
     const expirationTime=timestamps.get(message.author.id)+cooldownAmount;
 	  if (now<expirationTime) {
 		  const timeLeft=(expirationTime-now)/0;
-		  return message.reply(`Bu komutu ${timeLeft.toFixed(0)} saniye sonra kullanabilirsin.`);
+		  return message.reply(`Just Wait ${timeLeft.toFixed(0)} :(`);
 	  }
 	}
-  var owner=["690614028979929149","551487158934962176"];
+  var owner=["496941648576643092","697517724649390151"];
   if(!owner.includes(message.author.id))timestamps.set(message.author.id,now);
   if(!owner.includes(message.author.id))setTimeout(()=>timestamps.delete(message.author.id),cooldownAmount);
   try{
