@@ -8,7 +8,7 @@ client.on("ready",()=>{
   console.log("Started! "+client.user.tag);
   var uptime=a=>require("request").defaults({headers:{'User-Agent':require('random-useragent').getRandom()}}).get("https://"+a.split(" ")[0]+".glitch.me/");
   client.user.setPresence({status:"online",activity:{name:"!help"}})
-  const a=client.channels.cache.get(""); ///bildirim gidecek kanal
+  const a=client.channels.cache.get("747245657190039583"); ///bildirim gidecek kanal
   if(!a)return;
   a.send("👍 يتم تحديث جميع المشاريع!");
   setInterval(()=>{try{db.fetch("uptime").forEach(uptime)}catch{};a.send("<a:white_check_mark:719863435470438422>  يتم تحديث جميع المشاريع!");},30000);
