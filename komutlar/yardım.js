@@ -7,6 +7,6 @@ module.exports={
     const embed = new Discord.MessageEmbed()
     .setTitle("Help Command")
     .setColor("#00BFFF")
-    .addField("Commands:"`!uptime , !delete , !projects , !help-me`)
+    .addField("Commands:",`!uptime , !delete , !projects , !help-me`)
     message.channel.send(embed)
   }}
