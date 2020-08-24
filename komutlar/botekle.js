@@ -6,7 +6,7 @@ module.exports={
     const Discord=require("discord.js");
 		const db=require("quick.db")
     if(!args[0])return message.channel.send(new Discord.MessageEmbed().setColor('#00BFFF').setDescription("Please give website link to moniter"));
-    if(args[0].startsWith("http://")||args[0].startsWith("https://")||args[0].includes(".")||args[0].includes("/"))return message.channel.send(new Discord.MessageEmbed().setDescription("You must type the project name").addField("Example:",`!monitor MeCodes.glitch.me`));
+    if(args[0].startsWith("http://")||args[0].startsWith("https://")||args[0].includes(".")||args[0].includes("/"))return message.channel.send(new Discord.MessageEmbed().setDescription("You must type the project name").addField("Example:",`!monitor MeCodes-Bot`));
     if(db.get("uptime").includes(args[0]+" "+message.author.id))return message.channel.send(new Discord.MessageEmbed().setDescription("This Project already uptimed"))
     db.push("uptime",args[0]+" "+message.author.id);
     message.channel.send(new Discord.MessageEmbed().setColor("#00BFFF").setDescription("Just Wait `30 Seconds` For The Uptime Your Project"))
