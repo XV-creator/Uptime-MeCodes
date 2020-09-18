@@ -11,7 +11,7 @@ client.on("ready",()=>{
   if(!db.get("uptime"))db.set("uptime",[])
   console.log("Started! "+client.user.tag);
   var uptime=a=>require("request").defaults({headers:{'User-Agent':require('random-useragent').getRandom()}}).get("https://"+a.split(" ")[0]+".glitch.me/");
-  client.user.setPresence({status:"online",activity:{name:"!help | Me Uptime v1.0.0"}})
+  client.user.setPresence({status:"online",activity:{name:"!help-me | Me Uptime v1.0.0"}})
   const a=client.channels.cache.get("747245657190039583"); ///bildirim gidecek kanal
   if(!a)return;
   a.send("👍 يتم تحديث جميع المشاريع!");
@@ -48,4 +48,4 @@ client.on("message",message=>{
 client.commands=new Discord.Collection();
 const commandFiles=fs.readdirSync('./komutlar').filter(file=>file.endsWith('.js'));
 for(const file of commandFiles){const command=require(`./komutlar/${file}`);client.commands.set(command.name,command);}
-client.login("NzQ3MjUyNzk3MzEyOTkxNDAz.X0MLZg.iLazfd93BFhoWQJ-bZmiLdw4HP0");
+client.login("NzUwNDI0MjA3ODg3ODI3MDE0.X06VAQ.ipNZ7sAr7EbInuTodZHCwX_mh8I")//("NzQ3MjUyNzk3MzEyOTkxNDAz.X0MLZg.iLazfd93BFhoWQJ-bZmiLdw4HP0");
