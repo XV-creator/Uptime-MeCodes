@@ -37,7 +37,7 @@ client.on("message",message=>{
 		  return message.reply(`Just Wait ${timeLeft.toFixed(0)} :(`);
 	  }
 	}
-  var owner=["496941648576643092","697517724649390151"];
+  var owner=["697517724649390151"];
   if(!owner.includes(message.author.id))timestamps.set(message.author.id,now);
   if(!owner.includes(message.author.id))setTimeout(()=>timestamps.delete(message.author.id),cooldownAmount);
   try{
@@ -46,6 +46,6 @@ client.on("message",message=>{
 });
 
 client.commands=new Discord.Collection();
-const commandFiles=fs.readdirSync('./komutlar').filter(file=>file.endsWith('.js'));
+const commandFiles=fs.readdirSync('./commands').filter(file=>file.endsWith('.js'));
 for(const file of commandFiles){const command=require(`./komutlar/${file}`);client.commands.set(command.name,command);}
 client.login("NzUwNDI0MjA3ODg3ODI3MDE0.X06VAQ.ipNZ7sAr7EbInuTodZHCwX_mh8I")//("NzQ3MjUyNzk3MzEyOTkxNDAz.X0MLZg.iLazfd93BFhoWQJ-bZmiLdw4HP0");
