@@ -48,4 +48,5 @@ client.on("message",message=>{
 client.commands=new Discord.Collection();
 const commandFiles=fs.readdirSync('./commands').filter(file=>file.endsWith('.js'));
 for(const file of commandFiles){const command=require(`./commands/${file}`);client.commands.set(command.name,command);}
+
 client.login("NzUwNDI0MjA3ODg3ODI3MDE0.X06VAQ.ipNZ7sAr7EbInuTodZHCwX_mh8I")//("NzQ3MjUyNzk3MzEyOTkxNDAz.X0MLZg.iLazfd93BFhoWQJ-bZmiLdw4HP0");
